@@ -16,8 +16,6 @@ class Inference(abc.ABC):
 
     @staticmethod
     def process(self, df):
-        # Placeholder for processing logic
-        # This method should be overridden in subclasses
         return df
 
     @abc.abstractmethod

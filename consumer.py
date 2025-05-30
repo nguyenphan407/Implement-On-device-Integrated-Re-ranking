@@ -51,11 +51,13 @@ def main():
     for msg in consumer:
         rec = msg.value  # dict keys match signature.inputs keys
 
+        print(type(rec))
+
         feed_dict = {}
         for name, tensor in input_tensors.items():
             if name == 'labels':
                 name = 'lb'
-            if name =='user_features':
+            if name == 'user_features':
                 name = 'usr_ph'
             if name == 'keep_prob':
                 feed_dict[tensor] = 1.0

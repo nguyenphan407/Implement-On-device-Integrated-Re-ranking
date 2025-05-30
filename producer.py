@@ -64,7 +64,7 @@ def main():
             payload[name] = arr_val
 
         producer.send(TOPIC, payload)
-        print(f"Sent {i}")
+        print(f"Send Record {i}: {payload.keys()}")
         time.sleep(5)
 
     producer.flush()

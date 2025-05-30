@@ -4,10 +4,8 @@ class BatchInference(Inference):
     def read(self):
         return self.spark \
             .read \
-            .format("kafka") \
-            .option("kafka.bootstrap.servers", "localhost:9092") \
-            .option("subscribe", "test") \
-            .load()
+            .format("csv") \
+            .load("dataset_path", header=True, inferSchema=True)
 
     def write(self):
         return self.spark \
